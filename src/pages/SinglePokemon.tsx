@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { pokemonData } from '../data/pokemonData';
 import { setTypeColor } from '../services';
+import PokemonCard from '../components/PokemonCard'
 
 const SinglePokemonPage: React.FC = () => {
   const [pokemon, setPokemon] = useState<Pokemon>();
@@ -139,6 +140,11 @@ const SinglePokemonPage: React.FC = () => {
                         );
                       })}
                     </div>
+                    <hr/>
+                    {/* Card */}
+                    <PokemonCard pokemon={pokemon} />
+                
+                   
                   </div>
                 </div>
               </div>
