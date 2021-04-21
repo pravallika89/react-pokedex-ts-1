@@ -1,6 +1,8 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { pokemonData } from '../data/pokemonData';
+// import { setTypeColor } from '../services';
+import ListCardComponent from '../components/ListCardComponent';
 
 const HomePage: React.FC = () => {
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonData);
@@ -65,10 +67,11 @@ const HomePage: React.FC = () => {
                       </Link>
                     </h2>
                     <div>
-                      <small>Height: {poke.height}</small>
-                      <small>Weight: {poke.weight}</small>
+                      <small >Height:{poke.height} | Weight:{poke.weight}</small>
                     </div>
                   </div>
+                  {/* List card */}
+                  <ListCardComponent poke={poke}/>
                   {/* section pokemon name that is wrapped in a link */}
                   {/* section for details under the pokemon name */}
                 </li>
